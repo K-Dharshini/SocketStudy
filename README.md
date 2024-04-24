@@ -1,7 +1,7 @@
-# Ex.No:1a  			Study of Socket Programming
+# Ex.No:1a Study of socket programming
 
 ## Aim:
-To perform a study on Socket Programming
+To perform a study on Socket Programming.
 
 ## Introduction:
 Socket programming is a crucial aspect of network communication, allowing for data exchange between computers over a network. It forms the backbone of various networked applications, enabling communication between clients and servers. This study explores the fundamental concepts of socket programming, its use cases, and provides a practical example to demonstrate its implementation.
@@ -64,40 +64,5 @@ Socket programming finds applications in various domains, including web developm
 
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
 
-## Program:
-# Client
-~~~
-import socket
-from datetime import datetime
-s=socket.socket()
-s.bind(('localhost',8000))
-s.listen(5)
-c,addr=s.accept()
-print("client address:",addr)
-now=datetime.now()
-c.send(now.strftime("date:%d/%m/%Y & time:%H:%M:%S").encode())
-ack=c.recv(1024).decode()
-if ack:
-    print(ack)
-c.close()
-~~~
-
-# Server
-~~~
-import socket
-s=socket.socket()
-s.connect(('localhost',8000))
-print(s.getsockname())
-print(s.recv(1024).decode())
-s.send("acknowledgement received from the server".encode())
-~~~
-
-## Output:
-# Client
-![image](https://github.com/K-Dharshini/SocketStudy/assets/139334830/7599f33c-100b-49ce-93a2-d93a5c001898)
-
-# Server
-![image](https://github.com/K-Dharshini/SocketStudy/assets/139334830/3e2afa03-124b-47fd-a7ed-f0ecf7b1556c)
-
 ## Result:
-Thus the study of Socket Programming Completed Successfully.
+Thus the study of Socket Programming is completed successfully.
